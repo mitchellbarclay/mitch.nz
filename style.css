@@ -49,8 +49,8 @@ html {
 
 .description{
   box-sizing:border-box;
-  padding:2rem!important;
-  border-left:10px solid;
+  padding:1.5rem 1rem 1.5rem 3rem!important;
+  border-left:20px solid;
 }
 
 .description p:last-child{
@@ -292,20 +292,21 @@ a.nav-link>i {
 /*_____________ Type _____________*/
 
 body {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'Rubik', sans-serif;
 }
 
 p {
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: 'Rubik', sans-serif !important;
   font-size: 1rem;
-  letter-spacing: 0.0em;
+  letter-spacing: 0.02em;
   font-weight: 400;
+  line-height:1.8em;
 }
 
 @media (min-width: 768px) {
   p{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
