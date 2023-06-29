@@ -49,8 +49,8 @@ html {
 
 .description{
   box-sizing:border-box;
-  padding:1.5rem 1rem 1.5rem 3rem!important;
-  border-left:20px solid;
+  padding:2rem!important;
+  border-left:1rem solid;
 }
 
 .description p:last-child{
@@ -272,7 +272,9 @@ a.nav-link>i {
 .mail-link::after {
   content: 'mail';
   margin-right: 5px;
+  
 }
+
 
 .has-mail-link:hover>.mail-link::after {
   content: 'outgoing_mail';
@@ -281,11 +283,19 @@ a.nav-link>i {
 
 .has-mail-link:hover {
   text-decoration: none !important;
-  transform: translateX(10px);
+  transform: translateX(5px);
+}
+
+.btn.has-mail-link:hover{
+  transform: translateX(0px);
 }
 
 .mail-link {
   margin: auto;
+}
+
+.btn.has-mail-link > .mail-link{
+  transform:translateY(0.16em);
 }
 
 
