@@ -99,6 +99,7 @@ border-color:red;
 
 #header {
   height:100vh;
+  width:100vw;
   display: flex;
   background: #ffedc7;
   background-image: url('m/h/anim.png');
@@ -304,6 +305,7 @@ a.nav-link>i {
 body {
   font-size: 1rem;
   font-family: 'Rubik', sans-serif;
+  overflow-x:hidden!important;
 }
 
 p {
@@ -913,11 +915,12 @@ margin-top:0.5em!important;
 /*_____________ Video Section _____________*/
 
 #videoSection {
-  transition: 1s;
+  transition: 2s;
   overflow: hidden !important;
 }
 
 .video-container {
+  transition:0s;
   position: relative;
   width: 100%;
   max-width: 1000px;
@@ -1072,8 +1075,9 @@ margin-top:0.5em!important;
 
 /*_____ Video selector _____*/
 
-.video-button.active {
 
+
+.video-button.active {
   background:rgba(0,260,0,0.2);
   outline:none;
   border-bottom:10px solid green;
@@ -1127,7 +1131,6 @@ margin-top:0.5em!important;
 
 .dark-mode {
   background: rgba(0, 0, 0, 0.9) !important;
-  transition: 2s;
 }
 
 .dark-mode a {
@@ -1146,12 +1149,12 @@ margin-top:0.5em!important;
 #videoSection.dark-mode {
   padding-bottom: 200px !important;
   padding-top: 200px !important;
-  transform: translateY(-185px);
+  transform: translateY(-184.5px);
 }
 
 #vidz.dark-mode {
   color:white;
-  transform: translateY(-150px);
+  transform: translateY(-184.5px);
   position:relative;
   z-index:4;
 }
@@ -1161,17 +1164,18 @@ margin-top:0.5em!important;
 #vidz.dark-mode h1{
   color:white!important;
   mix-blend-mode: normal;
-  transform: translateY(150px);
+  transform: translateY(184.5px);
   transition:2s;
 }
 
 #videoSection.dark-mode p{
-  color:white;
+  color:white!important;
   opacity:0.8;
 }
 
 #videoSection.dark-mode button{
   opacity:0.5;
+  background:rgba(0,0,0,0);
 }
 
 /*_____________ Web Section _____________*/
