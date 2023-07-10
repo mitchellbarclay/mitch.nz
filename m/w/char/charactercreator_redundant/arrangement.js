@@ -53,12 +53,7 @@ function draw () {
   rect(canvasWidth/2, 480, 400,160, 60,60,0,0);
   fill(shirtR2, shirtG2, shirtB2);
   ellipse(canvasWidth/2, 380, 170,200);
-  fill(50);
-  rect(canvasWidth/14,canvasHeight/2, 100, 500);
-  rect(canvasWidth/4.65,canvasHeight/2, 100, 500);
-  rect(canvasWidth/14+canvasWidth/1.4,canvasHeight/2, 100, 500);
-  rect(canvasWidth/4.65+canvasWidth/1.4,canvasHeight/2, 100, 500);
-
+ 
 
   //grid
   let w = canvasWidth / 7;
@@ -68,30 +63,6 @@ function draw () {
       let y = h/2 + h*i;
       let x = w/2 + w*j;
 
-      //left 2/4 grid
-      if(j<2){
-        push();
-        translate(x, y);
-        scale(w/25, h/25);
-        mouthV = focusedRandom(0, 100, 0);
-        eyeHV = focusedRandom(0, 100, 0);
-        eyeWV = focusedRandom(0, 100, 0);
-        faceWV = focusedRandom(0, 100, 0);
-        jawV = focusedRandom(0, 100, 0);
-        eyeSV = focusedRandom(0, 100, 0);
-        faceCV = focusedRandom(0, 100, 0);
-        eyeCV = focusedRandom(-30, 100, 3);
-        noseV = focusedRandom(0, 100, 0);
-        noseBV = focusedRandom(0, 100, 0);
-        hairCV = focusedRandom(0, 100, 3);
-        hairV = focusedRandom(0, 100, 0);
-        mouthHV = focusedRandom(0,100,0);
-        eyeRV = focusedRandom(0,100,0);
-        beardV = focusedRandom(0,100,0);
-        eyeBV = focusedRandom(0,100,0);
-        drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, noseV, noseBV, hairCV, hairV, mouthHV, eyeRV, beardV, eyeBV);
-        pop();
-      }
 
       //feature face
       if(j==3){
@@ -121,40 +92,12 @@ function draw () {
         }
       }
 
-      //right 2/4 grid
-      if(j>4){
-        push();
-        translate(x, y);
-        scale(w/25, h/25);
-        mouthV = focusedRandom(0, 100, 0);
-        eyeHV = focusedRandom(0, 100, 0);
-        eyeWV = focusedRandom(0, 100, 0);
-        faceWV = focusedRandom(0, 100, 0);
-        jawV = focusedRandom(0, 100, 0);
-        eyeSV = focusedRandom(0, 100, 0);
-        faceCV = focusedRandom(0, 100, 0);
-        eyeCV = focusedRandom(-30, 100, 3);
-        noseV = focusedRandom(0, 100, 0);
-        noseBV = focusedRandom(0, 100, 0);
-        hairCV = focusedRandom(0, 100, 3);
-        hairV = focusedRandom(0, 100, 0);
-        mouthHV = focusedRandom(0,100,0);
-        eyeRV = focusedRandom(0,100,0);
-        beardV = focusedRandom(0,100,0);
-        eyeBV = focusedRandom(0,100,0);
-        drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, noseV, noseBV, hairCV, hairV, mouthHV, eyeRV, beardV, eyeBV);
-        pop();
-      }
     }
   }
 
 }
 
-function keyTyped() {
-  if (key == '!') {
-    saveBlocksImages();
-  }
-  else if (key == '@') {
-    saveBlocksImages(true);
-  }
-}
+
+
+
+

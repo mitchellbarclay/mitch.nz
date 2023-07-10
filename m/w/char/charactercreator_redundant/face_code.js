@@ -9,7 +9,7 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   let mouth_size = map(mouthV, 0, 100, 0.5, 2.3);
   let eyeH = map(eyeHV, 0, 100, 0, 1);
   let eyeW = map(eyeWV, 0, 100, -0.4, 1);
-  let faceW = map(faceWV, 0, 100, 0, 3,5);
+  let faceW = map(faceWV, 0, 100, 0, 3.5);
   let jaw = map(jawV, 0, 100, 1, 7);
   let eyeS = map(eyeSV, 0, 100, 1, 2);
   let faceR = map(faceCV, 0, 100, 0, 30);
@@ -42,60 +42,67 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   let eyeBag = map(eyeBV, 0, 100, 0, 10);
   let neck = map(neckV, 0,100, 0,1);
 
-  //neck (for feature face)
-  if (neckV >= 0.000000001){
-    fill(191+faceR, 122+faceG, 71+faceB);
-    ellipse(0,5,7.5,11);
-  }
+
+  fill(shirtR, shirtG, shirtB);
+  rect(0,13,faceW*5 + 10,15,5);
+
+  fill(191+faceR, 122+faceG, 71+faceB);
+  ellipse(0,5,7.5,11);
 
   // head
   fill(207+faceR, 138+faceG, 87+faceB);
   rect(0, 0, 9.5+faceW, 18, 10,10,jaw,jaw);
 
-  //eyebrows
-  fill(0+browR, 0+browG, 0+browB);
-  rect(-2.5-eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 0, 1,0,0);
-  rect( 2.5+eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 1, 0,0,0);
+  
 
   //hair
   fill(0+hairR, 0+hairG, 0+hairB);
   if (hairCut >= 1){
-    rect(-4.5-faceW/2,-3,1,5, 1);
-    rect(4.5+faceW/2,-3,1,5, 1);
+    rect(-5-faceW/2,-2,2,4, 1);
+    rect(5+faceW/2,-2,2,4, 1);
   }
   if (hairCut >= 2){
-    rect(-4.5-faceW/2,-3,1,5, 1);
-    rect(4.5+faceW/2,-3,1,5, 1);
-    ellipse(0,-8,4+faceW,3);
+    ellipse(-5-faceW/2,-3,2,4, 1);
+    ellipse(5+faceW/2,-3,2,4, 1);
+    ellipse(0,-8.2,4+faceW,3);
   }  
   if (hairCut >=3){
-    rect(-4.5-faceW/2,-3,1,7, 1);
-    rect(4.5+faceW/2,-3,1,7, 1);
-    ellipse(0,-7,9+faceW,5);
+    ellipse(-4.75-faceW/2,-5,3,6, 1);
+    ellipse(4.75+faceW/2,-5,3,6, 1);
+    ellipse(0,-7.2,11+faceW,5);
 
   }
   if (hairCut >=4){
     rect(-4.5-faceW/2,-3,1.5,7, 1);
     rect(4.5+faceW/2,-3,1.5,7, 1);
-    ellipse(0,-7,10+faceW,5);
+
     ellipse(2,-5,5+faceW,3);
   }
   if (hairCut >=5){
     rect(-4.5-faceW/2,-2.5,1.5,10, 1);
     rect(4.5+faceW/2,-2.5,1.5,10, 1);
-    ellipse(0,-7,10+faceW,5);
-    ellipse(2,-5,5+faceW,5);
+    ellipse(-5,-6.5,3+faceW,3+faceW);
+    ellipse(5,-6.5,3+faceW,3+faceW);
+    ellipse(4,-7.5,3+faceW,3+faceW);
+    ellipse(-4,-7.5,3+faceW,3+faceW);
+    ellipse(0,-8,5+faceW,5+faceW);
+    
   }
+
+   //eyebrows
+  fill(0+browR, 0+browG, 0+browB);
+  rect(-2.5-eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 0, 1,0,0);
+  rect( 2.5+eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 1, 0,0,0);
 
   //ears
   fill(207+faceR, 138+faceG, 87+faceB);
-  ellipse(-5-faceW/2, 0, 2, 2.3);
-  ellipse(-4.8-faceW/2, 0.8, 1.5, 2);
-  ellipse(5+faceW/2, 0, 2, 2.3);
-  ellipse(4.8+faceW/2, 0.8, 1.5, 2);
+  ellipse(-5.2-faceW/2, 0, 2, 2.3);
+  ellipse(-5-faceW/2, 0.8, 1.5, 2);
+  ellipse(5.2+faceW/2, 0, 2, 2.3);
+  ellipse(5+faceW/2, 0.8, 1.5, 2);
   fill(176+noseR, 94+noseG, 56+noseB);
-  ellipse(5+faceW/2, 0.3, 0.6,1.5);
-  ellipse(-5-faceW/2, 0.3, 0.6,1.5);
+  ellipse(5.2+faceW/2, 0.3, 0.6,1.5);
+  ellipse(-5.2-faceW/2, 0.3, 0.6,1.5);
   
   // eyes
   if(eyeBag >= 8){
@@ -131,29 +138,60 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   if (beardCut >= 6){
    fill(hairR-10, hairG-10, hairB-10);
    rect(0,4,6+faceW+beardW,2,jaw);
-  }
-  if (beardCut >= 8){
+ }
+ if (beardCut >= 8){
    fill(hairR-10, hairG-10, hairB-10);
    rect(0,6,8.5+faceW+beardW,6,jaw);
-  }
-  if (beardCut >= 9){
+ }
+ if (beardCut >= 9){
   fill(hairR-10, hairG-10, hairB-10);
   rect(0,6,8.5+faceW+beardW,8,jaw+5);
-  }
-  fill(207+faceR, 138+faceG, 87+faceB);
-  rect(0,5+mouthH,4.5,mouth_size+0.5,2);
+}
+fill(207+faceR, 138+faceG, 87+faceB);
+rect(0,5+mouthH,4.5,mouth_size+0.5,2);
 
 
   // nose
-  fill(176+noseR, 94+noseG, 56+noseB);
-  rect(0,0.4, nose3,4+nose4);
-  rect(0, 2.2, 2.95, nose2, 0.2);
-  ellipse(0, 2.1, 2+nose1,2.2);
+fill(176+noseR, 94+noseG, 56+noseB);
+rect(0,0.4, nose3,4+nose4);
+rect(0, 2.2, 2.95, nose2, 0.2);
+ellipse(0, 2.1, 2+nose1,2.2);
 
   //mouth 
-  fill(201+lipsR, 90+lipsG, 64+lipsB);
-  rect(0, 5+mouthH, 4, mouth_size, 1);
-  fill(0);
-  rect(0, 5+mouthH, 3.4,0.1,0.6);
+fill(201+lipsR, 90+lipsG, 64+lipsB);
+rect(0, 5+mouthH, 4, mouth_size, 1);
+fill(0);
+rect(0, 5+mouthH, 3.4,0.1,0.6);
 
 }
+
+function resetFocusedRandom() {
+  return Math.seedrandom(arguments);
+}
+
+function focusedRandom(min, max, focus, mean) {
+  // console.log("hello")
+  if(max === undefined) {
+    max = min;
+    min = 0;
+  }
+  if(focus === undefined) {
+    focus = 1.0;
+  }
+  if(mean === undefined) {
+    mean = (min + max) / 2.0;
+  }
+  if(focus == 0) {
+    return d3.randomUniform(min, max)();
+  }
+  else if(focus < 0) {
+    focus = -1 / focus;
+  }
+  let sigma = (max - min) / (2 * focus);
+  let val = d3.randomNormal(mean, sigma)();
+  if (val >= min && val < max) {
+    return val;
+  }
+  return d3.randomUniform(min, max)();
+}
+
