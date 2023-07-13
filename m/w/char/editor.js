@@ -7,11 +7,11 @@ let bg_color = [0];
 let shirtR, shirtG, shirtB;
 
 function setup() {
-  // Get the container element
+// Get the container element
   canvasContainer = document.querySelector('#canvasContainer');
   resizeCanvasToMatchContainer();
 
-    // Initialize the shirt color components
+// Initialize the shirt color components
   shirtR = random(0, 300);
   shirtG = random(0, 300);
   shirtB = random(0, 300);
@@ -19,38 +19,42 @@ function setup() {
   shirtG2 = random(0, 300);
   shirtB2 = random(0, 300);
 
-  // Create and parent sliders
-  for (let i = 1; i < 18; i++) { // only create sliders up to 15
-    let slider = createSlider(0, 100, 50);
-    slider.parent('slider' + i + 'Container');
-    sliders.push(slider);
-    targetValues.push(slider.value());
+// Create and parent sliders
+for (let i = 1; i < 16; i++) { // only create sliders up to 15
+  let slider = createSlider(0, 100, 50);
+  slider.parent('slider' + i + 'Container');
+  sliders.push(slider);
+  targetValues.push(slider.value());
 
-    // Add an event listener to the slider that updates the corresponding targetValue
-    slider.input(() => {
-      targetValues[i - 1] = slider.value();
-    });
-  }
-  
-  // Create and parent the toggle button
-  toggleButton = createCheckbox();
-  toggleButton.parent('toggleButtonContainer'); 
-
-  // Create and parent the randomizer button
-  let randomizeButton = createButton('Randomize');
-  randomizeButton.parent('randomizeButtonContainer'); 
-
-  // Add an event listener to the randomize button
-  randomizeButton.mousePressed(() => {
-    targetValues = sliders.map(slider => random(slider.elt.min, slider.elt.max)); 
-
-      // Also generate random colors for the shirt
-
-    shirtR = random(0, 300);
-    shirtG = random(0, 300);
-    shirtB = random(0, 300);
-
+// Add an event listener to the slider that updates the corresponding targetValue
+  slider.input(() => {
+    targetValues[i - 1] = slider.value();
   });
+}
+
+// Create and parent the toggle button
+toggleButton = createCheckbox();
+toggleButton.parent('toggleButtonContainer'); 
+
+// Create and parent the randomizer button
+let randomizeButton = createButton('Randomise');
+randomizeButton.parent('randomizeButtonContainer'); 
+
+// Add an event listener to the randomize button
+  randomizeButton.mousePressed(() => {
+  targetValues = sliders.map(slider => random(slider.elt.min, slider.elt.max)); 
+
+// Also generate random colors for the shirt
+
+  shirtR = random(0, 300);
+  shirtG = random(0, 300);
+  shirtB = random(0, 300);
+
+  // Randomize the state of the toggleButton
+  toggleButton.checked(random() > 0.5);
+
+
+});
 }
 
 function draw() {
@@ -60,29 +64,29 @@ function draw() {
   background(shirtR-60, shirtB-60, shirtG-60);
   pop();
 
-  // Smoothly change slider values towards the target values
+// Smoothly change slider values towards the target values
   for (let i = 0; i < sliders.length; i++) {
     let currentValue = sliders[i].value();
     let targetValue = targetValues[i];
-    let newValue = lerp(currentValue, targetValue, 0.2); // The last parameter is the speed of the transition
-    sliders[i].value(newValue);
-  }
+let newValue = lerp(currentValue, targetValue, 0.2); // The last parameter is the speed of the transition
+sliders[i].value(newValue);
+}
 
 
-  // Then apply translate and scale transformations for the face
-  let face_size = Math.min(width, height) / 2.5;
-  let face_scale = face_size / 10;
+// Then apply translate and scale transformations for the face
+let face_size = Math.min(width, height) / 2.5;
+let face_scale = face_size / 10;
 
-  translate(width / 2, height / 2);
-  scale(face_scale);
+translate(width / 2, height / 2);
+scale(face_scale);
 
-  // Get slider and toggle values
-  let sliderValues = sliders.map(slider => slider.value());
-  let toggleValue = toggleButton.checked() ? 100 : 0;
+// Get slider and toggle values
+let sliderValues = sliders.map(slider => slider.value());
+let toggleValue = toggleButton.checked() ? 100 : 0;
 
 
-  // Pass sliderValues and toggleValue to your drawFace function
-  drawFace4(...sliderValues, toggleValue);
+// Pass sliderValues and toggleValue to your drawFace function
+drawFace4(...sliderValues, toggleValue);
 }
 
 
@@ -96,8 +100,8 @@ function resizeCanvasToMatchContainer() {
   let viewportHeight = window.innerHeight;
 
   let newHeight = Math.min(containerHeight, viewportHeight);
-  
-  // Create the canvas and attach it to the container
+
+// Create the canvas and attach it to the container
   if (canvas) {
     resizeCanvas(containerWidth, newHeight);
   } else {
@@ -109,13 +113,13 @@ function resizeCanvasToMatchContainer() {
 
 function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, noseV, noseBV, hairCV, hairV, mouthHV, eyeRV, beardV, eyeBV, neckV) {
 
-  //mode setup
+//mode setup
   rectMode(CENTER);
   angleMode(DEGREES);
   noStroke();
   colorMode(HSB);
-  
-  //slider maps
+
+//slider maps
   let mouth_size = map(mouthV, 0, 100, 0.5, 2.3);
   let eyeH = map(eyeHV, 0, 100, 0, 1.5);
   let eyeW = map(eyeWV, 0, 100, -0.4, 1);
@@ -147,7 +151,7 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   let eyeR = map(eyeCV, 0, 100, 40, 200);
   let eyeG = map(eyeCV, 0, 100, 80, 100);
   let eyeB = map(eyeCV, 0, 100, 40, 100);
-  
+
 
   let hairR = map(hairCV, 0, 100, 0, 40);
   let hairG = map(hairCV, 0, 100, 0, 200);
@@ -178,13 +182,13 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   fill(faceR2-20+faceR, faceG2-20+faceG, faceB2-20+faceB);
   ellipse(0,5,7.5,11);
 
-  // head
+// head
   fill(faceR2+faceR, faceG2+faceG, faceB2+faceB);
   rect(0, 0, 9.5+faceW, 18, 10,10,jaw,jaw);
 
-  
 
-  //hair
+
+//hair
   fill(0+hairR, 0+hairG, 0+hairB);
   if (hairCut >= 1){
     rect(-5-faceW/2,-2,2,4, 1);
@@ -214,15 +218,15 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
     ellipse(4,-7.5,3+faceW,3+faceW);
     ellipse(-4,-7.5,3+faceW,3+faceW);
     ellipse(0,-8,5+faceW,5+faceW);
-    
+
   }
 
-   //eyebrows
+//eyebrows
   fill(0+browR, 0+browG, 0+browB);
   rect(-2.5-eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 0, 1,0,0);
   rect( 2.5+eyeW, -3.1+eyeH/2, 2.5+eyeW, 0.7, 1, 0,0,0);
 
-  //ears
+//ears
   fill(faceR2+faceR, faceG2+faceG, faceB2+faceB);
   ellipse(-5.2-faceW/2, 0, 2, 2.3);
   ellipse(-5-faceW/2, 0.8, 1.5, 2);
@@ -231,8 +235,8 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   fill(noseR2+noseR, noseG2+noseG, noseB2+noseB);
   ellipse(5.2+faceW/2, 0.3, 0.6,1.5);
   ellipse(-5.2-faceW/2, 0.3, 0.6,1.5);
-  
-  // eyes
+
+// eyes
   if(eyeBag >= 8){
     fill(noseR2+noseR, noseG2+noseG, noseB2+noseB);
     ellipse(-2.5-eyeW, -1+eyeH, 2, 3);
@@ -258,7 +262,7 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   ellipse( 2.5+eyeW, -1.7+eyeH, 1.1, 1.1);
 
 
-  //beard
+//beard
   if (beardCut >= 2){
     push();
     colorMode(RGB);
@@ -267,33 +271,33 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
     pop();
   }
   if (beardCut >= 4){
-   fill(hairR-10, hairG-10, hairB-10);
-   rect(0,mouthH+4,6+faceW+(beardW/1.5),2,jaw);
- }
- if (beardCut >= 6){
-   fill(hairR-10, hairG-10, hairB-10);
-   rect(0,6+(mouthH/2),8.5+faceW+beardW,6-mouthH,jaw);
- }
- if (beardCut >= 8){
-  fill(hairR-10, hairG-10, hairB-10);
-  rect(0,6+(mouthH/4),9.5+faceW,6-(mouthH/2),jaw+2);
-}
-fill(faceR2+faceR, faceG2+faceG, faceB2+faceB);
-rect(0,5+mouthH,4.5,mouth_size+0.5,2);
+    fill(hairR-10, hairG-10, hairB-10);
+    rect(0,mouthH+4,6+faceW+(beardW/1.5),2,jaw);
+  }
+  if (beardCut >= 6){
+    fill(hairR-10, hairG-10, hairB-10);
+    rect(0,6+(mouthH/2),8.5+faceW+beardW,6-mouthH,jaw);
+  }
+  if (beardCut >= 8){
+    fill(hairR-10, hairG-10, hairB-10);
+    rect(0,6+(mouthH/4),9.5+faceW,6-(mouthH/2),jaw+2);
+  } 
+  fill(faceR2+faceR, faceG2+faceG, faceB2+faceB);
+  rect(0,5+mouthH,4.5,mouth_size+0.5,2);
 
 
 
-  // nose
-fill(noseR2+noseR, noseG2+noseG, noseB2+noseB);
-rect(0,0.4, nose3,3+nose4);
-rect(0, 2.35, 2.95, nose2, 1);
-ellipse(0, 2.1, 2+nose1,2.2);
+// nose
+  fill(noseR2+noseR, noseG2+noseG, noseB2+noseB);
+  rect(0,0.4, nose3,3+nose4);
+  rect(0, 2.35, 2.95, nose2, 1);
+  ellipse(0, 2.1, 2+nose1,2.2);
 
-  //mouth 
-fill(lipsR2+lipsR, lipsG2+lipsG, lipsB2+lipsB);
-rect(0, 5+mouthH, 4, mouth_size, 1);
-fill(0);
-rect(0, 5+mouthH, 3.4,0.1,0.6);
+//mouth 
+  fill(lipsR2+lipsR, lipsG2+lipsG, lipsB2+lipsB);
+  rect(0, 5+mouthH, 4, mouth_size, 1);
+  fill(0);
+  rect(0, 5+mouthH, 3.4,0.1,0.6);
 
 }
 
@@ -302,7 +306,7 @@ function resetFocusedRandom() {
 }
 
 function focusedRandom(min, max, focus, mean) {
-  // console.log("hello")
+// console.log("hello")
   if(max === undefined) {
     max = min;
     min = 0;

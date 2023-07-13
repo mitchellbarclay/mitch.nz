@@ -8,117 +8,165 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
 
     <style>
-         body { 
-            padding: 0; 
-            margin: 0; 
-    
-        }
-        #canvasContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-            padding:0px;
-        }
+       body { 
+        padding: 0; 
+        margin: 0; 
 
-        #randomizeButtonContainer button{
-            width:14rem!important;
-            font-family:'Rubik Mono One',monospace;
-            font-size:1.5rem;
-            background:rgba(230,0,0,0.5);
-            color:white;
-            backdrop-filter: blur(20px);
-            border:none;
-            border-radius:100px;
-            box-shadow:0px 10px 10px rgba(0,0,0,0.4);
-             transition:0.2s;
-         }
-         #randomizeButtonContainer button:hover{
-            transform:scale(1.2);
-            transition:0.2s;
-         }
+    }
+    #canvasContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        padding:0px;
+    }
 
-        #randomizeButtonContainer{
-            position: absolute;
-            bottom:30px;
-            left:calc(50% - 7rem);
-        }
+    #randomizeButtonContainer button, .custom-button{
+        width:auto!important;
+        font-family:'Rubik Mono One',monospace;
+        font-size:1.2rem;
+        background:rgba(230,0,0,0.8);
+        color:white;
+        backdrop-filter: blur(20px);
+        border:none;
+        border-radius:6px;
+        box-shadow:0px 10px 10px rgba(0,0,0,0.4);
+        transition:0.2s;
+    }
 
-        .control-panel{
-            position:absolute;
-            bottom:0;
-            background:rgba(260,260,260,0.2);
-            padding:10px;
-        }
-        
-    </style>
+    #randomizeButtonContainer button{
+        background:rgba(0,0,230,0.8);
+    }
+    #randomizeButtonContainer button:hover, .custom-button:hover{
+        transform:scale(1.03);
+        transition:0.2s;
+    }
+
+    label{
+        width:100px;
+        text-align:right;
+        font-size:0.8rem;
+        font-family:'Rubik';
+    }
+
+
+    .control-panel{
+        position:absolute;
+        bottom:0;
+
+        background:rgba(260,260,260,0.1);
+        padding:20px;
+    }
+
+    .card{
+        background:rgba(255,255,255,0.2);
+        border:none;
+    }
+    ::-webkit-slider-runnable-track {
+       height: 1rem;
+       border-radius:10px;
+       background-color: rgba(0,130,0,0.5);
+
+   }
+   ::-webkit-slider-thumb{
+    height: 1rem;
+    background-color: rgba(0,130,0,1);
+    }
+
+
+    .slider-wrapper input {
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .slider-wrapper input{
+        background:none;
+    }
+
+    .slider-wrapper input {
+      outline: none;
+    }
+
+    #toggleButtonContainer input{
+       margin-left:10px;
+    }
+
+
+</style>
 </head>
 
 <body class="p-0">
     <div class="container-fluid p-0 g-0">
         <div class="row p-0 g-0">
-            <div class="col-md-4 control-panel d-none">
+            <div class="col-md-4 control-panel">
                 <div class="slider-container">
-                    <div class="slider-wrapper" id="slider1Container">
-                        <label for="slider1">Lip size</label>
+                    <div class="buttons d-flex">
+                        <div id="randomizeButtonContainer"></div>
+                        <button class="custom-button mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#editFace">Edit</button>
                     </div>
-                    <div class="slider-wrapper" id="slider2Container">
-                        <label for="slider2">Eye placement</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider3Container">
-                        <label for="slider3">Eye gap</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider4Container">
-                        <label for="slider4">Face width</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider5Container">
-                        <label for="slider5">Jaw shape</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider6Container">
-                        <label for="slider6">Eye lid shape</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider7Container">
-                        <label for="slider7">Skin tone</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider8Container">
-                        <label for="slider8">Eye colour</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider9Container">
-                        <label for="slider9">Nose tip</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider10Container">
-                        <label for="slider10">Nose bridge</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider11Container">
-                        <label for="slider11">Hair colour</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider12Container">
-                        <label for="slider12">Hair style</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider13Container">
-                        <label for="slider13">Mouth height</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider14Container">
-                        <label for="slider14">Eye shape</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider15Container">
-                        <label for="slider15">Facial hair</label>
-                    </div>
-                    <div class="slider-wrapper" id="slider16Container">
-                        <label for="slider16">Facial hair</label>
-                    </div>
-                     <div class="slider-wrapper" id="slider17Container">
-                        <label for="slider17">Facial hair</label>
-                    </div>
-                    <div id="toggleButtonContainer">
-                        <label for="toggleButton"></label>
-                        <label for="toggleButton">Eye bags</label>
+                    <div class="collapse" id="editFace">
+                        <div class="card card-body">
+                            <div class="slider-wrapper" id="slider1Container">
+                                <label for="slider1">Lip size</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider2Container">
+                                <label for="slider2">Eye placement</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider3Container">
+                                <label for="slider3">Eye gap</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider4Container">
+                                <label for="slider4">Face width</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider5Container">
+                                <label for="slider5">Jaw shape</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider6Container">
+                                <label for="slider6">Eye lid shape</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider7Container">
+                                <label for="slider7">Skin tone</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider8Container">
+                                <label for="slider8">Eye colour</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider9Container">
+                                <label for="slider9">Nose tip</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider10Container">
+                                <label for="slider10">Nose bridge</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider11Container">
+                                <label for="slider11">Hair colour</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider12Container">
+                                <label for="slider12">Hair style</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider13Container">
+                                <label for="slider13">Mouth height</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider14Container">
+                                <label for="slider14">Eye shape</label>
+                            </div>
+                            <div class="slider-wrapper" id="slider15Container">
+                                <label for="slider15">Facial hair</label>
+                            </div>
+                            <div class="slider-wrapper d-none" id="slider16Container">
+                                <label for="slider16">Facial hair</label>
+                            </div>
+
+                            <div id="toggleButtonContainer" class="d-flex">
+                                <label for="toggleButton">Eye bags</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
-                <div id="randomizeButtonContainer"></div>
+
                 <div class="sizing-offset"><div class="object" id="canvasContainer"></div></div>
             </div>
         </div>

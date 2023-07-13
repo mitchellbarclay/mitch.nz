@@ -15,19 +15,32 @@ const panImage = document.querySelector('.pan-image');
 const footer = document.querySelector('#footer');
 const footerInner = document.querySelector('.footer-inner');
 
+let timeoutId;
+let isDraggingSeekBar = false;
+
+
 const fakeBrowser = document.getElementById('fakeBrowser');
 const expandButton = document.getElementById('expandButton');
+const closeButton = document.getElementById('closeButton'); // The close button
 const webContainer = document.querySelector('.web-container');
 const initialPosition = fakeBrowser.style.position;
 const initialMaxHeight = webContainer.style.maxHeight;
 
-let timeoutId;
-let isDraggingSeekBar = false;
-
-         
 let isExpanded = false; // New variable to track expansion state
 
 /*_____ web switcher _____*/
+
+// Function to collapse the fake browser
+function collapseFakeBrowser() {
+    fakeBrowser.style.position = initialPosition;
+    fakeBrowser.style.top = '';
+    fakeBrowser.style.left = '';
+    fakeBrowser.style.width = '';
+    fakeBrowser.style.height = '';
+    fakeBrowser.style.zIndex = '';
+    webContainer.style.maxHeight = initialMaxHeight;
+    isExpanded = false; // Reset expansion state
+}
 
 expandButton.addEventListener('click', function() {
   if (!isExpanded) { // Only expand if not already expanded
@@ -38,25 +51,24 @@ expandButton.addEventListener('click', function() {
     fakeBrowser.style.height = '100vh';
     fakeBrowser.style.zIndex = '9999';
     fakeBrowser.style.padding = '0';
-
-    // Update the max-height of the .web-container class
     webContainer.style.maxHeight = '100vh';
-
+    closeButton.classList.remove('anim-shake');
+    closeButton.classList.add('anim-close');
     isExpanded = true; // Set expansion state
   } else { // Collapse if already expanded
-    fakeBrowser.style.position = initialPosition;
-    fakeBrowser.style.top = '';
-    fakeBrowser.style.left = '';
-    fakeBrowser.style.width = '';
-    fakeBrowser.style.height = '';
-    fakeBrowser.style.zIndex = '';
-
-    // Restore the initial max-height of the .web-container class
-    webContainer.style.maxHeight = initialMaxHeight;
-
-    isExpanded = false; // Reset expansion state
+    collapseFakeBrowser();
   }
 });
+
+// New event listener for the close button
+closeButton.addEventListener('click', function() {
+    if (isExpanded) { // Only collapse if expanded
+        collapseFakeBrowser();
+        closeButton.classList.add('anim-shake');
+        closeButton.classList.remove('anim-close');
+    }
+});
+
 
 var selectableElements = document.querySelectorAll('.list-group-item');
 selectableElements.forEach(function(element) {

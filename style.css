@@ -1300,11 +1300,19 @@ margin-top:0.5em!important;
   display:flex;
 }
 
-.fakebutton.red-bg:hover{
+.fakebutton.anim-shake:hover{
   background:darkgrey;
   opacity:1;
   transform: translateX(0px);
   animation: shake 0.3s;
+}
+
+.fakebutton.anim-close:hover{
+  background:darkred;
+  opacity:1;
+  cursor:pointer;
+  transition:0.1s;
+  transform:scale(1.2);
 }
 
 
@@ -1347,7 +1355,7 @@ margin-top:0.5em!important;
   transform:scale(1.2);
 }
 
-#expandButton i{
+.fakebutton i{
   opacity:0;
   font-size:12px;
   margin:auto;
@@ -1355,7 +1363,7 @@ margin-top:0.5em!important;
   transition:0.1s;
 }
 
-#expandButton:hover i{
+.fakebutton:hover i{
  opacity:1;
  transform:scale(1);
  transition:0.1s;
