@@ -6,6 +6,7 @@ let toggleButton; // This will replace slider16
 let bg_color = [0];
 let shirtR, shirtG, shirtB;
 
+
 function setup() {
 // Get the container element
   canvasContainer = document.querySelector('#canvasContainer');
@@ -111,7 +112,7 @@ function resizeCanvasToMatchContainer() {
 }
 
 
-function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, noseV, noseBV, hairCV, hairV, mouthHV, eyeRV, beardV, eyeBV, neckV) {
+function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, noseV, noseBV, hairCV, hairV, mouthHV, eyeRV, beardV, eyeBV) {
 
 //mode setup
   rectMode(CENTER);
@@ -170,7 +171,6 @@ function drawFace4(mouthV, eyeHV, eyeWV, faceWV, jawV, eyeSV, faceCV, eyeCV, nos
   let beardW = map(jawV, 0, 100, 1, -5);
   let beardCut = map(beardV, 0, 100, 0, 10);
   let eyeBag = map(eyeBV, 0, 100, 0, 10);
-  let neck = map(neckV, 0,100, 0,1);
 
 
   push();

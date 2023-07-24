@@ -1183,11 +1183,13 @@ margin-top:0.5em!important;
 .web-container {
   width: 100%;
   height: calc(100vh - 40px);
-  max-height: 70vh;
+  max-height:700px;
+  min-height: 60vh;
 }
 
 .web-demo {
-  min-height: 70vh;
+  max-height:700px;
+  min-height: 60vh;
   width: 100%;
 }
 
