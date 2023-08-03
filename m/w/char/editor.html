@@ -43,10 +43,21 @@
         transition:0.2s;
     }
 
+    #randomizeButtonContainer button::after{
+        content:'↻';
+        font-size:1.5rem;
+        line-height:1rem;
+        margin-left:5px;
+    }
+
+    
+
+
+
     label{
-        width:100px;
+        width:100%;
         max-width:100%;
-        text-align:center;
+        text-align:left;
         font-size:0.8rem;
         font-family:'Calibri', sans-serif;
     }
@@ -56,18 +67,18 @@
         position:absolute;
         bottom:0;
 
-        background:rgba(260,260,260,0.1);
+
         padding:20px;
     }
 
     .card{
-        background:rgba(255,255,255,0.2);
+        background:rgba(255,255,255,0.3);
         border:none;
     }
     ::-webkit-slider-runnable-track {
        height: 1rem;
        border-radius:10px;
-       background-color: rgba(0,130,0,0.5);
+       background-color: rgba(0,130,0,0.8);
 
    }
    ::-webkit-slider-thumb{
@@ -96,6 +107,35 @@
        margin-left:10px;
     }
 
+    #name-container-container{
+        color:white;
+        text-shadow:0px 1px 20px black;
+        font-size:1.5rem;
+        font-family:courier;
+        font-weight:800;
+        border-radius:5px;
+        line-height:1.25em;
+        position:absolute;
+        bottom:5%;
+        left:5%;
+        text-transform: uppercase;
+        display:inline-block;
+        width:auto;
+    }
+
+    .red-strip{
+        text-shadow:none;
+        width:auto;
+        display:inline-block;
+        color:white;
+        background:red;
+    }
+
+    .buttons{
+        justify-content: space-between;
+    }
+
+
 
 </style>
 </head>
@@ -103,17 +143,24 @@
 <body class="p-0">
     <div class="container-fluid p-0 g-0">
         <div class="row p-0 g-0">
-            <div class="col-md-4 control-panel">
+            <div id="name-container-container">
+                <div class="red-strip">Hello my name is:</div>
+                <div id="name-container"></div>
+                <div id="randomizeButtonContainer"></div>
+            </div>
+
+            <div class="col-md-12 control-panel d-none">
                 <div class="slider-container">
-                    <div class="buttons d-flex">
-                        <div id="randomizeButtonContainer"></div>
+                
+                    <div class="buttons d-none">
+                        
                         <button class="custom-button mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#editFace">Edit</button>
                     </div>
                     <div class="collapse" id="editFace">
                         <div class="card card-body">
                         <div class="container-fluid">
                             <div class="row">
-                            <div class="col-4 col-sm-12">
+                            <div class="col-4">
                             <div class="slider-wrapper" id="slider1Container">
                                 <label for="slider1">Lip size</label>
                             </div>
@@ -130,7 +177,7 @@
                                 <label for="slider5">Jaw shape</label>
                             </div>
                             </div>
-                            <div class="col-4 col-sm-12">
+                            <div class="col-4">
                             <div class="slider-wrapper" id="slider6Container">
                                 <label for="slider6">Eye lid shape</label>
                             </div>
@@ -148,7 +195,7 @@
                                 <label for="slider10">Nose bridge</label>
                             </div>
                         </div>
-                            <div class="col-4 col-sm-12">
+                            <div class="col-4">
                             <div class="slider-wrapper" id="slider11Container">
                                 <label for="slider11">Hair colour</label>
                             </div>
