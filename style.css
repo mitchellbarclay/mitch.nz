@@ -32,6 +32,11 @@
 
 html {
   scroll-behavior: smooth;
+  cursor:url('m/h/cursor1x.png'), auto;
+  cursor: -webkit-image-set(
+  url('m/h/cursor1x.png') 1x,
+  url('m/h/cursor2x.png') 2x
+), auto;
 }
 
 .container-fluid {
@@ -197,7 +202,6 @@ header>.container-fluid {
     background-color: rgba(0,0,0,0);
     position:static;
     width:auto;
-    
   }
 }
 
@@ -249,6 +253,11 @@ a.nav-link {
   text-decoration: underline 0.1rem wavy rgba(260, 0, 0, 0);
   text-underline-offset: 0.5em;
   display: flex;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 a.nav-link:hover {
   color: blue !important;
@@ -489,6 +498,11 @@ h6 {
   font-weight: 500;
   margin-bottom: 0.25em;
   text-transform: uppercase;!important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 @media (min-width: 768px) {
@@ -630,7 +644,11 @@ h6 {
 }
 
 .hover-button:hover{
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 .hover-button:hover img{
@@ -753,7 +771,11 @@ margin-top:0.5em!important;
   width: 50px;
   border-radius: 10px;
   text-align: center;
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 .close-btn:hover {
@@ -812,6 +834,11 @@ margin-top:0.5em!important;
 
 .carousel-inner {
   border-radius: 0.5rem!important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 .carousel-item {
@@ -823,6 +850,11 @@ margin-top:0.5em!important;
   background:rgba(130,0,130,0);
   border-radius:100%;
   font-size:50px!important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 .img-graphic:hover>.carousel-control-prev>.carousel-arrows,
@@ -874,13 +906,21 @@ margin-top:0.5em!important;
   transform: translate(-50%, -50%);
   transition: 0.5s cubic-bezier(.67, -0.01, .56, .99);
   top: 70%;
-  cursor: pointer !important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer!important;
   pointer-events: none !important;
 }
 
 .pan-indication:hover,
 .pan-indication span:hover {
-  cursor: pointer !important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer!important;
   pointer-events: none !important;
 }
 
@@ -909,7 +949,11 @@ margin-top:0.5em!important;
 }
 
 .pan-image:hover {
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 /*_____________ Video Section _____________*/
@@ -942,7 +986,11 @@ margin-top:0.5em!important;
 
 #myVideo,
 #myVideo * {
-  cursor: pointer !important;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer!important;
 }
 
 /*_____ Play button _____*/
@@ -965,7 +1013,11 @@ margin-top:0.5em!important;
   border: none;
   color: white;
   font-size: 3rem;
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
@@ -1070,7 +1122,11 @@ margin-top:0.5em!important;
   outline: 5px solid green;
   background: white;
   transition: 0.2s;
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 /*_____ Video selector _____*/
@@ -1112,6 +1168,11 @@ margin-top:0.5em!important;
   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
   color:green;
   border-bottom:10px solid rgba(0,130,0,0.5);
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
 }
 
 .video-button.active:hover{
@@ -1235,7 +1296,11 @@ margin-top:0.5em!important;
 }
 
 .list-group li:hover {
-  cursor: pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
   border-left: 0.5rem solid rgba(260, 0, 0, 0.4);
   transition: 0.2s;
 }
@@ -1310,7 +1375,11 @@ margin-top:0.5em!important;
 .fakebutton.anim-close:hover{
   background:darkred;
   opacity:1;
-  cursor:pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
   transition:0.1s;
   transform:scale(1.2);
 }
@@ -1350,7 +1419,11 @@ margin-top:0.5em!important;
 #expandButton:hover{
   background:darkgreen;
   opacity:1;
-  cursor:pointer;
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
   transition:0.1s;
   transform:scale(1.2);
 }
