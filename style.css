@@ -1017,7 +1017,7 @@ margin-top:0.5em!important;
   cursor: -webkit-image-set(
   url('m/h/pointer1x.png') 1x,
   url('m/h/pointer2x.png') 2x
-), pointer;
+), pointer!important;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
