@@ -39,6 +39,7 @@ html {
 ), auto;
 }
 
+
 .container-fluid {
   max-width: 1000px;
 }
@@ -902,6 +903,7 @@ margin-top:0.5em!important;
   transform-origin: top left;
 }
 
+
 .image-container:hover>.pan-indication {
   transform: translate(-50%, -50%);
   transition: 0.5s cubic-bezier(.67, -0.01, .56, .99);
@@ -954,6 +956,14 @@ margin-top:0.5em!important;
   url('m/h/pointer1x.png') 1x,
   url('m/h/pointer2x.png') 2x
 ), pointer;
+}
+
+.pan-image:active{
+ cursor:url('m/h/downpoint1x.png'), auto;
+  cursor: -webkit-image-set(
+  url('m/h/downpoint1x.png') 1x,
+  url('m/h/downpoint2x.png') 2x
+), auto!important;
 }
 
 /*_____________ Video Section _____________*/
@@ -1116,18 +1126,20 @@ margin-top:0.5em!important;
   background: white;
   outline: 0px solid green;
   transition: 0.2s;
-}
-
-#seekBar::-webkit-slider-thumb:hover {
-  outline: 5px solid green;
-  background: white;
-  transition: 0.2s;
   cursor:url('m/h/pointer1x.png'), pointer;
   cursor: -webkit-image-set(
   url('m/h/pointer1x.png') 1x,
   url('m/h/pointer2x.png') 2x
 ), pointer;
 }
+
+#seekBar::-webkit-slider-thumb:hover {
+  outline: 5px solid green;
+  background: white;
+  transition: 0.2s;
+}
+
+
 
 /*_____ Video selector _____*/
 
