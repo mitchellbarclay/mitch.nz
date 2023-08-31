@@ -310,6 +310,63 @@ a.nav-link>i {
   transform:translateY(0.16em);
 }
 
+.tab-selector{
+  max-width:1000px;
+  width:100%;
+  margin:auto;
+  margin-top:30px;
+  border:none!important;
+}
+
+.tab-selector > div{
+  border:none!important;
+}
+
+.g-tab{
+  margin:auto;
+  width:100%;
+  font-family:'Rubik', monospace;
+  font-weight:600;
+  text-transform: uppercase;
+  font-size:1rem;
+   border-radius:10px!important;
+   background:white;
+  font-weight:800;
+  color:grey;
+  padding:20px 10px;
+  transition:0.2s;
+  border-bottom:10px solid rgba(0,0,0,0.1)!important;
+  background:white!important;
+}
+
+.g-tab.active{
+  color:purple!important;
+  background:white!important;
+  border-bottom:10px solid purple!important;
+  background:rgba(130,0,130,0.1)!important;
+}
+
+.g-tab:hover{
+  transform:scale(1.05);
+  box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+  color:purple;
+  z-index:99;
+  border-bottom:5px solid rgba(0,130,0,0.5);
+  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor: -webkit-image-set(
+  url('m/h/pointer1x.png') 1x,
+  url('m/h/pointer2x.png') 2x
+), pointer;
+
+}
+
+
+
+
+.tab-selector > div > button.active:hover{
+  border-bottom:10px solid green;
+}
+
 
 /*_____________ Type _____________*/
 
@@ -1343,11 +1400,6 @@ margin-top:0.5em!important;
   transition: 0.2s;
   border-color: red;
   background:white;
-  background-image: linear-gradient(32deg, rgba(234,255,242,0.6) 0%, rgba(210,194,252,0.6) 48%, rgba(230,248,251,0.6) 98%);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .list-group li:hover {
@@ -1362,12 +1414,8 @@ margin-top:0.5em!important;
 
 .list-group>li.active {
   border: none;
-  background:white;
-  background-image: linear-gradient(32deg, rgba(234,255,242,0.6) 0%, rgba(210,194,252,0.6) 48%, rgba(230,248,251,0.6) 98%);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background:rgba(260,0,0,0.1);
+  
   color: black;
   border-left: 1rem solid red;
   margin: 0.2rem 0px !important;
