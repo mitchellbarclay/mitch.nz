@@ -32,11 +32,11 @@
 
 html {
   scroll-behavior: smooth;
-  cursor:url('m/h/cursor1x.png'), auto;
+  cursor:url('m/h/cursor1x.png') 10 0, auto;
   cursor: -webkit-image-set(
     url('m/h/cursor1x.png') 1x,
     url('m/h/cursor2x.png') 2x
-  ), auto;
+  ) 10 0, auto;
 }
 
 
@@ -255,11 +255,11 @@ a.nav-link {
   text-decoration: underline 0.1rem wavy rgba(260, 0, 0, 0);
   text-underline-offset: 0.5em;
   display: flex;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 a.nav-link:hover {
   color: blue !important;
@@ -352,11 +352,11 @@ a.nav-link>i {
   color:purple;
   z-index:99;
   border-bottom:5px solid rgba(0,130,0,0.5);
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 
 }
 
@@ -537,11 +537,11 @@ h6 {
   border-radius: 0.5rem!important;
   width:auto;
   transition:0.2s;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 .accordion-button::after{
   margin-left:10px;
@@ -556,11 +556,11 @@ h6 {
 .accordion-button:hover{
   transform:scale(1.05);
   transition:0.2s;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .accordion-item{
@@ -599,11 +599,11 @@ h6 {
   font-weight: 500;
   margin-bottom: 0.25em;
   text-transform: uppercase;!important;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 @media (min-width: 768px) {
@@ -656,7 +656,7 @@ h6 {
 .btn-down:hover{
   padding: 0.5rem 2.5rem 0.5rem 1.25rem;
 
-  transform:translateY(10px);
+  transform:translateY(2px);
   transition:0.2s;
 }
 
@@ -746,11 +746,11 @@ h6 {
 }
 
 .hover-button:hover{
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .hover-button:hover img{
@@ -874,11 +874,11 @@ margin-top:0.5em!important;
   width: 50px;
   border-radius: 10px;
   text-align: center;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .close-btn:hover {
@@ -941,11 +941,11 @@ margin-top:0.5em!important;
 
 .carousel-inner {
   border-radius: 0.5rem!important;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .carousel-item {
@@ -958,11 +958,11 @@ margin-top:0.5em!important;
   border-radius:100%;
   font-size:30px!important;
   box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .img-graphic:hover>.carousel-control-prev>.carousel-arrows,
@@ -1019,21 +1019,21 @@ margin-top:0.5em!important;
   transform: translate(-50%, -50%);
   transition: 0.5s cubic-bezier(.67, -0.01, .56, .99);
   top: 70%;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer!important;
+  ) 10 0, pointer!important;
   pointer-events: none !important;
 }
 
 .pan-indication:hover,
 .pan-indication span:hover {
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer!important;
+  ) 10 0, pointer!important;
   pointer-events: none !important;
 }
 
@@ -1062,19 +1062,19 @@ margin-top:0.5em!important;
 }
 
 .pan-image:hover {
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .pan-image:active{
- cursor:url('m/h/downpoint1x.png'), auto;
+ cursor:url('m/h/downpoint1x.png') 10 0, auto;
  cursor: -webkit-image-set(
   url('m/h/downpoint1x.png') 1x,
   url('m/h/downpoint2x.png') 2x
-), auto!important;
+) 10 0, auto!important;
 }
 
 /*_____________ Video Section _____________*/
@@ -1107,11 +1107,11 @@ margin-top:0.5em!important;
 
 #myVideo,
 #myVideo * {
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer!important;
+  ) 10 0, pointer!important;
 }
 
 /*_____ Play button _____*/
@@ -1134,11 +1134,11 @@ margin-top:0.5em!important;
   border: none;
   color: white;
   font-size: 3rem;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer!important;
+  ) 10 0, pointer!important;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
@@ -1237,11 +1237,11 @@ margin-top:0.5em!important;
   background: white;
   outline: 0px solid green;
   transition: 0.2s;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 #seekBar::-webkit-slider-thumb:hover {
@@ -1291,11 +1291,11 @@ margin-top:0.5em!important;
   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
   color:green;
   border-bottom:10px solid rgba(0,130,0,0.5);
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
 }
 
 .video-button.active:hover{
@@ -1414,11 +1414,11 @@ margin-top:0.5em!important;
 }
 
 .list-group li:hover {
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
   border-left: 0.5rem solid rgba(260, 0, 0, 0.4);
   transition: 0.2s;
 }
@@ -1489,11 +1489,11 @@ margin-top:0.5em!important;
 .fakebutton.anim-close:hover{
   background:darkred;
   opacity:1;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
   transition:0.1s;
   transform:scale(1.2);
 }
@@ -1533,11 +1533,11 @@ margin-top:0.5em!important;
 #expandButton:hover{
   background:darkgreen;
   opacity:1;
-  cursor:url('m/h/pointer1x.png'), pointer;
+  cursor:url('m/h/pointer1x.png') 10 0, pointer;
   cursor: -webkit-image-set(
     url('m/h/pointer1x.png') 1x,
     url('m/h/pointer2x.png') 2x
-  ), pointer;
+  ) 10 0, pointer;
   transition:0.1s;
   transform:scale(1.2);
 }
