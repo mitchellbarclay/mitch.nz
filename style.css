@@ -1,3 +1,37 @@
+/*_____ Testing _____*/
+
+
+.section-nav-container{
+            position:sticky;
+            top:100%;
+            width:0px;
+            left:100%;
+            display:none;
+          }
+
+          .section-nav-links{
+            margin-top:-50px;
+            transform:translateY(-100%); 
+            float:right;
+            text-align:center;
+          }
+
+          .section-nav-links a{
+              text-decoration: none;
+              display:block;
+          }
+
+          .section-nav-links a:hover{
+              cursor:url('m/h/pointer1x.png') 10 0, pointer;
+              cursor: -webkit-image-set(
+                 url('m/h/pointer1x.png') 1x,
+                 url('m/h/pointer2x.png') 2x
+            ) 10 0, pointer;
+
+          }
+
+
+
 /*_____ Responsive tags _____*/
 
 @media (min-width: 576px) {}
@@ -309,7 +343,7 @@ a.nav-link>i {
   transform:translateY(0.16em);
 }
 
-.tab-selector{
+/*.tab-selector{
   max-width:1000px;
   width:100%;
   margin:auto;
@@ -357,7 +391,7 @@ a.nav-link>i {
     url('m/h/pointer2x.png') 2x
   ) 10 0, pointer;
 
-}
+}*/
 
 
 
@@ -1080,7 +1114,7 @@ margin-top:0.5em!important;
 
 #videoSection {
   transition: 2s;
-  overflow: hidden !important;
+/*  overflow: hidden !important;*/
 }
 
 .video-container {
