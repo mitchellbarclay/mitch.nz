@@ -865,35 +865,6 @@ transform:scale(1);
   border:4px solid white;
 }
 
-/*.lightbox .blurb-container {
-  max-height: 30%;
-  max-width:700px;
-  width:90vw;
-  margin-top: 0rem;
-  bottom:0;
-  color: white !important;
-  font-size: 1rem !important;
-  line-height:1.25em!important;
-  text-align: left;
-  background: rgba(82, 20, 82,0.7);
-  padding:1rem;
-  border-radius:10px;
-
-}
-
-.blurb{
-  font-family: 'Ubuntu', sans-serif !important;
-margin-top:0.5em!important;
-  color:rgba(260,260,260, 0.8);
-}
-
-.blurb-title{
-  width:auto;
-  font-family:'Rubik Mono one';
-  margin-right:0.5em!important;
-  font-weight:600;
-  color:rgba(260,260,260, 1);
-}*/
 
 .lightbox .close-btn {
   position: absolute;
@@ -920,6 +891,20 @@ margin-top:0.5em!important;
   background: white;
   outline: 5px solid white;
 }
+
+.lightbox .content-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.lightbox .content-wrapper iframe {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  border: none;
+  overflow: auto;
+}
+
 
 /*_____ Image classes _____*/
 

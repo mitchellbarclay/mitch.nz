@@ -32,17 +32,17 @@ let isExpanded = false; // New variable to track expansion state
 
 // Function to collapse the fake browser
 function collapseFakeBrowser() {
-    fakeBrowser.style.position = initialPosition;
-    fakeBrowser.style.top = '';
-    fakeBrowser.style.left = '';
-    fakeBrowser.style.width = '';
-    fakeBrowser.style.height = '';
-    fakeBrowser.style.zIndex = '';
-    webContainer.style.maxHeight = initialMaxHeight;
+  fakeBrowser.style.position = initialPosition;
+  fakeBrowser.style.top = '';
+  fakeBrowser.style.left = '';
+  fakeBrowser.style.width = '';
+  fakeBrowser.style.height = '';
+  fakeBrowser.style.zIndex = '';
+  webContainer.style.maxHeight = initialMaxHeight;
     isExpanded = false; // Reset expansion state
-}
+  }
 
-expandButton.addEventListener('click', function() {
+  expandButton.addEventListener('click', function() {
   if (!isExpanded) { // Only expand if not already expanded
     fakeBrowser.style.position = 'fixed';
     fakeBrowser.style.top = '-48px';
@@ -61,200 +61,201 @@ expandButton.addEventListener('click', function() {
 });
 
 // New event listener for the close button
-closeButton.addEventListener('click', function() {
+  closeButton.addEventListener('click', function() {
     if (isExpanded) { // Only collapse if expanded
-        collapseFakeBrowser();
-        closeButton.classList.add('anim-shake');
-        closeButton.classList.remove('anim-close');
+      collapseFakeBrowser();
+      closeButton.classList.add('anim-shake');
+      closeButton.classList.remove('anim-close');
     }
-});
+  });
 
 
-var selectableElements = document.querySelectorAll('.list-group-item');
-selectableElements.forEach(function(element) {
-  element.addEventListener('click', function() {
-    var targetId = this.getAttribute('data-target');
-    var targetElement = document.querySelector(targetId);
+  var selectableElements = document.querySelectorAll('.list-group-item');
+  selectableElements.forEach(function(element) {
+    element.addEventListener('click', function() {
+      var targetId = this.getAttribute('data-target');
+      var targetElement = document.querySelector(targetId);
 
     // Only switch if not already expanded or clicking the same button
-    if (!isExpanded || targetElement.style.display === 'none') {
-      var contentElements = document.querySelectorAll('[id^="web"]');
-      contentElements.forEach(function(element) {
-        element.style.display = 'none';
-      });
+      if (!isExpanded || targetElement.style.display === 'none') {
+        var contentElements = document.querySelectorAll('[id^="web"]');
+        contentElements.forEach(function(element) {
+          element.style.display = 'none';
+        });
 
-      targetElement.style.display = 'block';
+        targetElement.style.display = 'block';
 
-      selectableElements.forEach(function(element) {
-        element.classList.remove('active');
-      });
-      this.classList.add('active');
-    }
+        selectableElements.forEach(function(element) {
+          element.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
   });
-});
 
 
-/*_____ Footer _____*/
+/*_____ Video _____*/
 
 
-window.addEventListener('scroll', updateFooterPosition);
 
-function togglePlayPause(event) {
-  if (event.target !== seekBar) {
-    if (video.paused) {
-      video.play();
-      playPauseBtn.classList.add('playing');
-      playPauseBtn.querySelector('i').textContent = 'pause';
-      overlay.classList.add('overlay-play');
-      overlay.classList.remove('overlay-pause');
-      seekBar.style.display = 'block';
+  function togglePlayPause(event) {
+    if (event.target !== seekBar) {
+      if (video.paused) {
+        video.play();
+        playPauseBtn.classList.add('playing');
+        playPauseBtn.querySelector('i').textContent = 'pause';
+        overlay.classList.add('overlay-play');
+        overlay.classList.remove('overlay-pause');
+        seekBar.style.display = 'block';
 
       // check if user is on mobile device
-      if (!/Mobi/.test(navigator.userAgent)) {
-        videoSection.classList.add('dark-mode');
-        videoHeading.classList.add('dark-mode');
-        navbarBG.classList.add('dark-mode');
-        navbar.classList.add('dark-mode');
-      }
-    } else {
-      video.pause();
-      playPauseBtn.classList.remove('playing');
-      playPauseBtn.querySelector('i').textContent = 'play_arrow';
-      overlay.classList.remove('overlay-play');
-      overlay.classList.add('overlay-pause');
-      seekBar.style.display = 'block';
+        if (!/Mobi/.test(navigator.userAgent)) {
+          videoSection.classList.add('dark-mode');
+          videoHeading.classList.add('dark-mode');
+          navbarBG.classList.add('dark-mode');
+          navbar.classList.add('dark-mode');
+        }
+      } else {
+        video.pause();
+        playPauseBtn.classList.remove('playing');
+        playPauseBtn.querySelector('i').textContent = 'play_arrow';
+        overlay.classList.remove('overlay-play');
+        overlay.classList.add('overlay-pause');
+        seekBar.style.display = 'block';
 
       // check if user is on mobile device
-      if (!/Mobi/.test(navigator.userAgent)) {
-        videoSection.classList.remove('dark-mode');
-        videoHeading.classList.remove('dark-mode');
-        navbarBG.classList.remove('dark-mode');
-        navbar.classList.remove('dark-mode');
+        if (!/Mobi/.test(navigator.userAgent)) {
+          videoSection.classList.remove('dark-mode');
+          videoHeading.classList.remove('dark-mode');
+          navbarBG.classList.remove('dark-mode');
+          navbar.classList.remove('dark-mode');
+        }
       }
     }
   }
-}
 
-function updateSeekBar() {
-  if (!isDraggingSeekBar) {
-    var value = (100 / video.duration) * video.currentTime;
-    seekBar.value = value;
+  function updateSeekBar() {
+    if (!isDraggingSeekBar) {
+      var value = (100 / video.duration) * video.currentTime;
+      seekBar.value = value;
+    }
   }
-}
 
-function seek() {
-  var time = (video.duration / 100) * seekBar.value;
-  video.currentTime = time;
-}
+  function seek() {
+    var time = (video.duration / 100) * seekBar.value;
+    video.currentTime = time;
+  }
 
-function handleMouseMove() {
+  function handleMouseMove() {
   // show the cursor
-  playPauseOverlay.classList.remove('no-cursor');
-  overlay.classList.remove('overlay-timeout');
+    playPauseOverlay.classList.remove('no-cursor');
+    overlay.classList.remove('overlay-timeout');
 
   // clear the previous timeout (if any)
-  clearTimeout(timeoutId);
+    clearTimeout(timeoutId);
   // start a new timeout to hide the cursor after 2 seconds of inactivity
-  timeoutId = setTimeout(() => {
-    overlay.classList.add('overlay-timeout');
-    playPauseOverlay.classList.add('no-cursor');
-  }, 1000);
-}
+    timeoutId = setTimeout(() => {
+      overlay.classList.add('overlay-timeout');
+      playPauseOverlay.classList.add('no-cursor');
+    }, 1000);
+  }
 
 // create a new IntersectionObserver instance
-const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
   // loop through the entries array
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
       // if the video is in view, add the spacebar event listener
-      document.addEventListener('keydown', handleKeyDown);
-      playPauseOverlay.addEventListener('mousemove', handleMouseMove);
-    } else {
+        document.addEventListener('keydown', handleKeyDown);
+        playPauseOverlay.addEventListener('mousemove', handleMouseMove);
+      } else {
       // if the video is not in view, remove the spacebar event listener
-      document.removeEventListener('keydown', handleKeyDown);
-      playPauseOverlay.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('keydown', handleKeyDown);
+        playPauseOverlay.removeEventListener('mousemove', handleMouseMove);
       // make sure to clear the timeout if the video is not in view
-      clearTimeout(timeoutId);
-      playPauseOverlay.classList.remove('no-cursor');
+        clearTimeout(timeoutId);
+        playPauseOverlay.classList.remove('no-cursor');
 
-    }
+      }
+    });
   });
-});
 
 // observe the video element
-observer.observe(video);
+  observer.observe(video);
 
 // function to handle the spacebar event
-function handleKeyDown(event) {
-  if (event.keyCode === 32) {
-    event.preventDefault();
-    togglePlayPause(event);
+  function handleKeyDown(event) {
+    if (event.keyCode === 32) {
+      event.preventDefault();
+      togglePlayPause(event);
+    }
   }
-}
 
-playPauseOverlay.addEventListener('click', togglePlayPause);
-video.addEventListener('timeupdate', () => {
-  if (!video.paused) {
-    seekBar.style.display = 'block';
-  }
-  updateSeekBar();
-});
-seekBar.addEventListener('change', seek);
-seekBar.addEventListener('mousedown', () => {
-  isDraggingSeekBar = true;
-});
-seekBar.addEventListener('mouseup', () => {
-  isDraggingSeekBar = false;
-});
-playPauseOverlay.addEventListener('mousemove', handleMouseMove);
+  playPauseOverlay.addEventListener('click', togglePlayPause);
+  video.addEventListener('timeupdate', () => {
+    if (!video.paused) {
+      seekBar.style.display = 'block';
+    }
+    updateSeekBar();
+  });
+  seekBar.addEventListener('change', seek);
+  seekBar.addEventListener('mousedown', () => {
+    isDraggingSeekBar = true;
+  });
+  seekBar.addEventListener('mouseup', () => {
+    isDraggingSeekBar = false;
+  });
+  playPauseOverlay.addEventListener('mousemove', handleMouseMove);
 
 // event listener for the 'ended' event
-video.addEventListener('ended', () => {
-  video.currentTime = 0;
-  video.load();
-  playPauseBtn.classList.remove('playing');
-  playPauseBtn.querySelector('i').textContent = 'play_arrow';
-  overlay.classList.remove('overlay-play');
-  overlay.classList.add('overlay-pause');
-  seekBar.style.display = 'none';
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.load();
+    playPauseBtn.classList.remove('playing');
+    playPauseBtn.querySelector('i').textContent = 'play_arrow';
+    overlay.classList.remove('overlay-play');
+    overlay.classList.add('overlay-pause');
+    seekBar.style.display = 'none';
 
   // check if user is on mobile device
-  if (!/Mobi/.test(navigator.userAgent)) {
-    videoSection.classList.remove('dark-mode');
-    navbarBG.classList.remove('dark-mode');
-  navbar.classList.remove('dark-mode');
-  }
-});
-
-function setSeekBarLength() {
-  if (video.duration) {
-    seekBar.max = video.duration;
-  } else {
-    video.addEventListener('durationchange', setSeekBarLength);
-  }
-}
-
-function changeVideo(src, poster) {
-  const video = document.getElementById('myVideo');
-  video.setAttribute('src', src);
-  video.setAttribute('poster', poster);
-  video.currentTime = 0;
-  seekBar.value = 0;
-  seekBar.style.display = 'none';
-
-  // remove the active class from all buttons
-  const buttons = document.querySelectorAll('.video-button');
-  buttons.forEach((button) => {
-    button.classList.remove('active');
+    if (!/Mobi/.test(navigator.userAgent)) {
+      videoSection.classList.remove('dark-mode');
+      videoHeading.classList.remove('dark-mode');
+      navbarBG.classList.remove('dark-mode');
+      navbar.classList.remove('dark-mode');
+    }
   });
 
+
+  function setSeekBarLength() {
+    if (video.duration) {
+      seekBar.max = video.duration;
+    } else {
+      video.addEventListener('durationchange', setSeekBarLength);
+    }
+  }
+
+  function changeVideo(src, poster) {
+    const video = document.getElementById('myVideo');
+    video.setAttribute('src', src);
+    video.setAttribute('poster', poster);
+    video.currentTime = 0;
+    seekBar.value = 0;
+    seekBar.style.display = 'none';
+
+  // remove the active class from all buttons
+    const buttons = document.querySelectorAll('.video-button');
+    buttons.forEach((button) => {
+      button.classList.remove('active');
+    });
+
   // add the active class to the button for the new video
-  const activeButton = document.querySelector(`button[onclick="changeVideo('${src}', '${poster}')"]`);
-  activeButton.classList.add('active');
-}
+    const activeButton = document.querySelector(`button[onclick="changeVideo('${src}', '${poster}')"]`);
+    activeButton.classList.add('active');
+  }
 
 // hide the seekbar initially
-seekBar.style.display = 'none';
+  seekBar.style.display = 'none';
 
 
 
@@ -263,8 +264,10 @@ seekBar.style.display = 'none';
 
 // title scroll effect
 
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
+  window.addEventListener('scroll', updateFooterPosition);
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
   const scrollFactor1 = getScrollFactor(y, 0.5, 2); // Change the minFactor and maxFactor values to control the speed of the header-inner element at different scroll positions
   const scrollFactor2 = getScrollFactor(y, 0.8, 3); // Change the minFactor and maxFactor values to control the speed of the header element at different scroll positions
   const y1 = y * scrollFactor1;
@@ -275,9 +278,9 @@ window.addEventListener('scroll', () => {
 
 });
 
-function getScrollFactor(scrollY, minFactor, maxFactor) {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = scrollY / maxScroll;
+  function getScrollFactor(scrollY, minFactor, maxFactor) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollY / maxScroll;
   const factor = minFactor + (maxFactor - minFactor) * Math.pow(scrollPercent, 10); // Change the exponent value to control the shape of the curve
   return factor;
 }
@@ -426,19 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
       imgWrapper.appendChild(img);
       imgWrapper.appendChild(closeBtn);
       lightbox.appendChild(imgWrapper);
-      // var blurbContainer = document.createElement('div');
-      // blurbContainer.className = 'blurb-container';
-      // if (blurbTitle) {
-      //   var blurbTitleDiv = document.createElement('div');
-      //   blurbTitleDiv.className = 'blurb-title';
-      //   blurbTitleDiv.textContent = blurbTitle;
-      //   blurbContainer.appendChild(blurbTitleDiv);
-      // }
-      // var blurbDiv = document.createElement('div');
-      // blurbDiv.className = 'blurb';
-      // blurbDiv.textContent = blurb;
-      // blurbContainer.appendChild(blurbDiv);
-      // lightbox.appendChild(blurbContainer);
 
       // Add click event listener to the close button to close the lightbox
       closeBtn.addEventListener('click', function() {
