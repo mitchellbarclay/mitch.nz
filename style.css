@@ -484,6 +484,7 @@ h6 {
 
 .display-1 {
   font-size: 5rem;
+  -webkit-text-decoration: underline 0.025em wavy red;
   text-decoration: underline 0.025em wavy red;
   text-underline-offset: 0.1em;
   line-height: 1em;
@@ -891,20 +892,6 @@ transform:scale(1);
   background: white;
   outline: 5px solid white;
 }
-
-.lightbox .content-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.lightbox .content-wrapper iframe {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-  border: none;
-  overflow: auto;
-}
-
 
 /*_____ Image classes _____*/
 
@@ -1423,7 +1410,6 @@ transform:scale(1);
 .list-group li {
   border: none;
   border-left: 0rem solid rgba(260, 0, 0, 0.4);
-
   margin: 0.2rem 0px;
   border-radius: 0.5rem !important;
   transition: 0.2s;
